@@ -56,10 +56,10 @@ class SporttrtyPersist(object):
                 res = 0
 
             try:
-                float(info['win_rate']), float(info['tie_rate']), float(info['tie_rate'])
+                float(info['win_rate']), float(info['tie_rate']), float(info['fail_rate'])
                 cur.execute(SporttrtyPersist.INSERT_GAME_SQL, (info['team'], host,
                                                           guest, info['full'], info['half'],
-                                                          info['win_rate'], info['tie_rate'], info['tie_rate'],
+                                                          info['win_rate'], info['tie_rate'], info['fail_rate'],
                                                           res, '', datetime.strptime(info['time'], '%Y-%m-%d'), info['league']))
             except Exception,e:
                 print "error param %s,%s"%(fromDate, toDate)
